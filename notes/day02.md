@@ -13,6 +13,7 @@
 - [x] 在终端完成了 `practice/day02/` 里的文件操作练习
 - [x] 运行了 `git status` 和 `git log --oneline`
 - [x] 填写了「What I Learned」和「Bugs」
+- [x] 完成 Git 扩展练习（diff / log / rm）
 
 ## What I Learned
 
