@@ -1,0 +1,34 @@
+# Build artifacts
+build/
+**/build/
+cmake-build-*/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# ROS2
+install/
+log/
+*.bag
+*.db3
+
+# IDE / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Vision demo outputs
+week03_vision_demo/output/
+week04_ros2_vision/output/
+*.mp4
+!week03_vision_demo/sample/.gitkeep
+
+# Logs and temp
+*.log
+sensor_log.txt
+/tmp/

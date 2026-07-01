@@ -1,3 +1,0 @@
-/Users/ganggang/Documents/Robotics Learning/cpp_practice/fake_sensor_cpp/build/CMakeFiles/fake_sensor.dir
-/Users/ganggang/Documents/Robotics Learning/cpp_practice/fake_sensor_cpp/build/CMakeFiles/edit_cache.dir
-/Users/ganggang/Documents/Robotics Learning/cpp_practice/fake_sensor_cpp/build/CMakeFiles/rebuild_cache.dir

@@ -1,23 +1,30 @@
-#include <iostream>
-#include <random>
-#include <chrono>
-#include <thread>
+#include "fake_sensor.hpp"
 
-double readFakeSensor()
-{
-    static std::random_device rd;
-    static std::mt19937 gen(rd());
-    static std::uniform_real_distribution<> dis(0.1, 5.0);
-    return dis(gen);
-}
+#include <chrono>
+#include <fstream>
+#include <iostream>
+#include <thread>
 
 int main()
 {
-    for (int i = 0; i < 10; i++)
-    {
-        double distance = readFakeSensor();
-        std::cout << "Frame " << i << ": fake distance = " << distance << " meters" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(500));
-    }
-    return 0;
+  FakeSensor sensor;
+  const int frames = 10;
+  std::ofstream logFile("sensor_log.txt");
+
+  std::cout << "Starting C++ sensor simulation..." << std::endl;
+
+  for (int i = 0; i < frames; ++i)
+  {
+    const double distance = sensor.readDistance();
+    const double temperature = sensor.readTemperature();
+    const std::string line = sensor.formatReading(i, distance, temperature);
+
+    std::cout << line << std::endl;
+    logFile << line << std::endl;
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+  }
+
+  std::cout << "Saved readings to sensor_log.txt" << std::endl;
+  return 0;
 }
