@@ -5,68 +5,68 @@
 ## 你现在的位置
 
 - **阶段**：Month 1 / Week 1
-- **已完成**：Day 01（仓库 + Python/C++ 假传感器初版）
-- **今天**：Day 02 — Linux 命令 + Git 复习
+- **已完成**：Day 01、Day 02（Linux + Git 练习）
+- **今天**：Day 03 — Python class 升级版假传感器
 - **本周目标**：打好工程基础，能独立跑 Python/C++ demo，周末定好 Ubuntu 虚拟机方案
 
-## 今天做这 4 件事（Day 02）
+## 今天做这 4 件事（Day 03）
 
 ### 1. 学（30 分钟）
 
-打开 [`notes/cheatsheets/linux-git.md`](cheatsheets/linux-git.md)，在终端里**亲手敲**每一行命令，不要只读。
+打开 [`python_practice/sensor_sim.py`](../python_practice/sensor_sim.py)，对照代码回答（能说出来才算懂）：
+
+- `FakeSensor` 这个 class 模拟了什么？
+- `read_distance()` / `read_temperature()` / `is_warning()` 各做什么？
+- `WARNING_DISTANCE_M = 1.0` 表示什么？什么时候会打印 `WARNING`？
 
 ### 2. 练（30 分钟）
 
-```bash
-cd "/Users/ganggang/Documents/Robotics Learning"
-mkdir -p practice/day02
-cd practice/day02
-pwd
-ls -la
-echo "robotics day02" > hello.txt
-cat hello.txt
-grep robotics hello.txt
-cp hello.txt hello_backup.txt
-mv hello_backup.txt backup.txt
-```
-
-然后练 Git：
+先跑通：
 
 ```bash
-cd "/Users/ganggang/Documents/Robotics Learning"
-git status
-git log --oneline
-git branch
+cd "/Users/ganggang/Documents/Robotics Learning/python_practice"
+python3 sensor_sim.py --frames 10 --interval 0.5
+cat sensor_log.txt
 ```
+
+再自己改需求（今天必做）：
+
+1. 打开 `sensor_sim.py`
+2. 把 `WARNING_DISTANCE_M` 从 `1.0` 改成 `0.8`
+3. 再运行一次，对比 WARNING 出现次数有没有变化
+
+可选：多跑几次 `--frames 20`，观察 0.8m 和 1.0m 的差别。
 
 ### 3. 记（15 分钟）
 
-填写 [`notes/day02.md`](day02.md)：
-- 哪些命令记住了
-- 哪些还不熟
+填写 [`notes/day03.md`](day03.md)：
+
+- 每个 class 方法的作用（用自己的话）
+- 改 0.8m 之后观察到什么
 - 今天遇到的 bug
 
 ### 4. 提交（5 分钟）
 
 ```bash
 cd "/Users/ganggang/Documents/Robotics Learning"
-git add notes/day02.md notes/cheatsheets/ practice/day02/hello.txt notes/CURRENT.md
-git commit -m "Day 02 Linux and Git practice"
+git add python_practice/sensor_sim.py notes/day03.md notes/CURRENT.md
+git commit -m "Day 03: Python FakeSensor class and warning threshold change"
 git push
 ```
 
 ## 今天完成标准
 
-- [ ] 能不看文档使用：`cd` `ls` `pwd` `cat` `mkdir` `cp` `mv` `grep`
-- [ ] 能不看文档使用：`git status` `git add` `git commit` `git push` `git log`
-- [ ] `notes/day02.md` 已填写
+- [ ] 能独立运行 `python3 sensor_sim.py` 并看到终端输出
+- [ ] 能说出 `FakeSensor` 三个方法各自干什么
+- [ ] 已把告警距离改成 0.8m 并重新运行对比
+- [ ] `notes/day03.md` 已填写
 - [ ] 今天有 Git commit
 
-## 明天（Day 03 预告）
+## 明天（Day 04 预告）
 
-- 跑升级版 Python 假传感器（class + 告警 + 写文件）
-- 自己改一个需求：把告警距离从 1.0m 改成 0.8m
-- 填写 `notes/day03.md`
+- 编译运行 C++ 版 `FakeSensor`（`cpp_practice/fake_sensor_cpp/`）
+- 对照 Python 版，理解 `.hpp` / `.cpp` 怎么分工
+- 填写 `notes/day04.md`
 
 ## 本周完整日程
 
