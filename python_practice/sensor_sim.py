@@ -7,14 +7,14 @@ from pathlib import Path
 class FakeSensor:
     """Simulates a distance sensor with optional temperature reading."""
 
-    WARNING_DISTANCE_M = 1 # 警告距离:1米,表示距离传感器读取的距离小于1米时,表示有障碍物
+    WARNING_DISTANCE_M = 0.8 # 警告距离:1米,表示距离传感器读取的距离小于1米时,表示有障碍物
 
     def __init__(self, min_distance: float = 0.1, max_distance: float = 5.0):
         self.min_distance = min_distance
         self.max_distance = max_distance
 
     def read_distance(self) -> float:
-        return random.uniform(self.min_distance, self.max_distance) # 创建一个随机数,范围在1和5之间,表示距离传感器读取的距离
+        return random.uniform(self.min_distance, self.max_distance) # 创建一个随机数,范围在0.1和5之间,表示距离传感器读取的距离
 
     def read_temperature(self) -> float:
         return random.uniform(18.0, 35.0) # 创建一个随机数,范围在18和35之间,表示温度传感器读取的温度
