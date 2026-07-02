@@ -76,11 +76,11 @@ git push
 
 ## 今天完成标准
 
-- [ ] 能独立执行 `cmake .. && make && ./fake_sensor` 并看到输出
-- [ ] 能说出 `.hpp` 和 `.cpp` 的分工
-- [ ] 能对照 Python 版说出至少 3 个方法的对应关系
-- [ ] `notes/day04.md` 已填写
-- [ ] 今天有 Git commit
+- [x] 能独立执行 `cmake .. && make && ./fake_sensor` 并看到输出
+- [x] 能说出 `.hpp` 和 `.cpp` 的分工
+- [x] 能对照 Python 版说出至少 3 个方法的对应关系
+- [x] `notes/day04.md` 已填写
+- [x] 今天有 Git commit
 
 ## 明天（Day 05 预告）
 
