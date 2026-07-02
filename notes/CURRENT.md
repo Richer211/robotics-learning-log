@@ -16,8 +16,14 @@
 打开 [`python_practice/sensor_sim.py`](../python_practice/sensor_sim.py)，对照代码回答（能说出来才算懂）：
 
 - `FakeSensor` 这个 class 模拟了什么？
+    模拟了传感器的温度，距离以及是否警告的变化
 - `read_distance()` / `read_temperature()` / `is_warning()` 各做什么？
+  1,`read_distance()` 表示读取传感器的距离
+  2,`read_temperature()` 表示读取传感器的温度
+  3,`is_warning()` 表示传感器是否警告
 - `WARNING_DISTANCE_M = 1.0` 表示什么？什么时候会打印 `WARNING`？
+  1,表示警告距离，当传感器离目标小于1米时发出警告
+  2,当warning为true时
 
 ### 2. 练（30 分钟）
 
@@ -37,6 +43,7 @@ cat sensor_log.txt
 
 可选：多跑几次 `--frames 20`，观察 0.8m 和 1.0m 的差别。
 
+修改对比发现，改成0.8与1并没有明显区别，因为每次到distance具有随机性，所以小于1或者0.8的warning有时候多有时候少
 ### 3. 记（15 分钟）
 
 填写 [`notes/day03.md`](day03.md)：
@@ -56,11 +63,11 @@ git push
 
 ## 今天完成标准
 
-- [ ] 能独立运行 `python3 sensor_sim.py` 并看到终端输出
-- [ ] 能说出 `FakeSensor` 三个方法各自干什么
-- [ ] 已把告警距离改成 0.8m 并重新运行对比
-- [ ] `notes/day03.md` 已填写
-- [ ] 今天有 Git commit
+- [x] 能独立运行 `python3 sensor_sim.py` 并看到终端输出
+- [x] 能说出 `FakeSensor` 三个方法各自干什么
+- [x] 已把告警距离改成 0.8m 并重新运行对比
+- [x] `notes/day03.md` 已填写
+- [x] 今天有 Git commit
 
 ## 明天（Day 04 预告）
 
@@ -80,9 +87,9 @@ git push
 
 ## 学不好时问自己
 
-1. 我今天写代码 / 敲命令了吗？
-2. 我运行并看到结果了吗？
-3. 我改过一个地方吗？
-4. 我记下来了吗？
+1. 我今天写代码 / 敲命令了吗？ Yes
+2. 我运行并看到结果了吗？ Yes
+3. 我改过一个地方吗？ Yes
+4. 我记下来了吗？Yes
 
 四个都是 Yes，才算有效的一天。
