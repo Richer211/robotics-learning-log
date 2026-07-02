@@ -5,75 +5,88 @@
 ## 你现在的位置
 
 - **阶段**：Month 1 / Week 1
-- **已完成**：Day 01、Day 02（Linux + Git 练习）
-- **今天**：Day 03 — Python class 升级版假传感器
+- **已完成**：Day 01～03（Python/C++ 初版、Linux/Git、Python class 假传感器）
+- **今天**：Day 04 — C++ class 版 `FakeSensor` + CMake
 - **本周目标**：打好工程基础，能独立跑 Python/C++ demo，周末定好 Ubuntu 虚拟机方案
 
-## 今天做这 4 件事（Day 03）
+## 今天做这 4 件事（Day 04）
 
 ### 1. 学（30 分钟）
 
-打开 [`python_practice/sensor_sim.py`](../python_practice/sensor_sim.py)，对照代码回答（能说出来才算懂）：
+打开 C++ 假传感器三个文件，对照 Python 版 [`python_practice/sensor_sim.py`](../python_practice/sensor_sim.py) 理解分工：
 
-- `FakeSensor` 这个 class 模拟了什么？
-    模拟了传感器的温度，距离以及是否警告的变化
-- `read_distance()` / `read_temperature()` / `is_warning()` 各做什么？
-  1,`read_distance()` 表示读取传感器的距离
-  2,`read_temperature()` 表示读取传感器的温度
-  3,`is_warning()` 表示传感器是否警告
-- `WARNING_DISTANCE_M = 1.0` 表示什么？什么时候会打印 `WARNING`？
-  1,表示警告距离，当传感器离目标小于1米时发出警告
-  2,当warning为true时
+| 文件 | 作用 |
+|------|------|
+| `fake_sensor.hpp` | **声明**：class 有哪些方法、成员变量（头文件） |
+| `fake_sensor.cpp` | **实现**：方法具体怎么写 |
+| `main.cpp` | **入口**：`main()` 循环读传感器、打印、写日志 |
+
+对照回答（能说出来才算懂）：
+
+- C++ 的 `FakeSensor` 和 Python 版各有哪些方法？一一对应关系是什么？
+- `.hpp` 和 `.cpp` 为什么要分开？（提示：声明 vs 实现）
+- `WARNING_DISTANCE_M` 在 C++ 里写在哪？和 Python 的 `class` 变量有何异同？
+- `main.cpp` 和 Python 的 `main()` 流程有什么不同？
 
 ### 2. 练（30 分钟）
 
-先跑通：
+编译并运行：
 
 ```bash
-cd "/Users/ganggang/Documents/Robotics Learning/python_practice"
-python3 sensor_sim.py --frames 10 --interval 0.5
+cd "/Users/ganggang/Documents/Robotics Learning/cpp_practice/fake_sensor_cpp"
+mkdir -p build && cd build
+cmake ..
+make
+./fake_sensor
 cat sensor_log.txt
 ```
 
-再自己改需求（今天必做）：
+可选对比练习：
 
-1. 打开 `sensor_sim.py`
-2. 把 `WARNING_DISTANCE_M` 从 `1.0` 改成 `0.8`
-3. 再运行一次，对比 WARNING 出现次数有没有变化
+```bash
+# 同一仓库里分别看 Python / C++ 日志
+cat "/Users/ganggang/Documents/Robotics Learning/python_practice/sensor_log.txt"
+cat sensor_log.txt
+```
 
-可选：多跑几次 `--frames 20`，观察 0.8m 和 1.0m 的差别。
+可选改需求（和 Day 03 呼应）：
 
-修改对比发现，改成0.8与1并没有明显区别，因为每次到distance具有随机性，所以小于1或者0.8的warning有时候多有时候少
+1. 打开 `fake_sensor.hpp`，把 `WARNING_DISTANCE_M` 从 `1.0` 改成 `0.8`
+2. 重新 `make && ./fake_sensor`，观察 WARNING 变化（记得：阈值越低，WARNING 越少）
+
 ### 3. 记（15 分钟）
 
-填写 [`notes/day03.md`](day03.md)：
+填写 [`notes/day04.md`](day04.md)：
 
-- 每个 class 方法的作用（用自己的话）
-- 改 0.8m 之后观察到什么
-- 今天遇到的 bug
+- `.hpp` / `.cpp` / `main.cpp` 各自干什么
+- 和 Python 版对照后，你理解了什么
+- `cmake && make` 过程中有没有报错
 
 ### 4. 提交（5 分钟）
 
 ```bash
 cd "/Users/ganggang/Documents/Robotics Learning"
-git add python_practice/sensor_sim.py notes/day03.md notes/CURRENT.md
-git commit -m "Day 03: Python FakeSensor class and warning threshold change"
+git add notes/day04.md notes/CURRENT.md
+# 若改了 fake_sensor.hpp 等代码，一并 add
+git commit -m "Day 04: C++ FakeSensor class and CMake build"
 git push
 ```
 
+> `build/` 目录不要提交（已在 `.gitignore` 里）。
+
 ## 今天完成标准
 
-- [x] 能独立运行 `python3 sensor_sim.py` 并看到终端输出
-- [x] 能说出 `FakeSensor` 三个方法各自干什么
-- [x] 已把告警距离改成 0.8m 并重新运行对比
-- [x] `notes/day03.md` 已填写
-- [x] 今天有 Git commit
+- [ ] 能独立执行 `cmake .. && make && ./fake_sensor` 并看到输出
+- [ ] 能说出 `.hpp` 和 `.cpp` 的分工
+- [ ] 能对照 Python 版说出至少 3 个方法的对应关系
+- [ ] `notes/day04.md` 已填写
+- [ ] 今天有 Git commit
 
-## 明天（Day 04 预告）
+## 明天（Day 05 预告）
 
-- 编译运行 C++ 版 `FakeSensor`（`cpp_practice/fake_sensor_cpp/`）
-- 对照 Python 版，理解 `.hpp` / `.cpp` 怎么分工
-- 填写 `notes/day04.md`
+- 理解 `.gitignore` 为什么忽略 `build/`
+- 确认 README 里的构建命令自己能跑通
+- 填写 `notes/day05.md`
 
 ## 本周完整日程
 
@@ -87,9 +100,9 @@ git push
 
 ## 学不好时问自己
 
-1. 我今天写代码 / 敲命令了吗？ Yes
-2. 我运行并看到结果了吗？ Yes
-3. 我改过一个地方吗？ Yes
-4. 我记下来了吗？Yes
+1. 我今天写代码 / 敲命令了吗？
+2. 我运行并看到结果了吗？
+3. 我改过一个地方吗？
+4. 我记下来了吗？
 
 四个都是 Yes，才算有效的一天。

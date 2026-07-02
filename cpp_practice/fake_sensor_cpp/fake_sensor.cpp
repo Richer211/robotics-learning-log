@@ -9,6 +9,11 @@ FakeSensor::FakeSensor(double minDistance, double maxDistance)
 {
 }
 
+void FakeSensor::seed(unsigned value)
+{
+  gen_.seed(value);
+}
+
 double FakeSensor::readDistance()
 {
   return distanceDist_(gen_);

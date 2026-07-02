@@ -12,7 +12,7 @@ int main()
   std::ofstream logFile("sensor_log.txt");
 
   std::cout << "Starting C++ sensor simulation..." << std::endl;
-
+  sensor.seed(42);
   for (int i = 0; i < frames; ++i)
   {
     const double distance = sensor.readDistance();
@@ -22,7 +22,7 @@ int main()
     std::cout << line << std::endl;
     logFile << line << std::endl;
 
-    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    std::this_thread::sleep_for(std::chrono::milliseconds(10));
   }
 
   std::cout << "Saved readings to sensor_log.txt" << std::endl;

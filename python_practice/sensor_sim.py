@@ -48,7 +48,7 @@ def main():
 
     print("Starting sensor simulation...") # 打印开始传感器模拟
     lines = [] # 创建一个列表,用于保存读取的距离和温度
-
+    random.seed(42) # 设置随机种子,用于每次运行时生成相同的随机数
     for frame in range(args.frames): # 遍历帧数,表示读取10次
         distance = sensor.read_distance() # 读取距离
         temperature = sensor.read_temperature() # 读取温度
