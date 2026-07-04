@@ -32,7 +32,7 @@ cmake .. && make && ./fake_sensor
 ### `.hpp` 和 `.cpp` 为什么要分开？（提示：声明 vs 实现）
 - hpp主要用来声明方法和变量，cpp主要用来实现具体的方法
 ### `WARNING_DISTANCE_M` 在 C++ 里写在哪？和 Python 的 `class` 变量有何异同？
-- 写在hpp里的static constexpr double WARNING_DISTANCE_M = 1.0;
+- 写在hpp里的static constexpr double WARNING_DISTANCE_M = 0.8;
 - 区别在于一个写在class内部作为全局变量，python的声明函数和具体实现都写在一个python文件里，而c++则把声明和实现分开，而这种全局的固定变量则写在hpp里
 ### `main.cpp` 和 Python 的 `main()` 流程有什么不同？
 - 一个专门写在了cpp文件里，一个则写在python文件里，没有单独区分
@@ -350,6 +350,43 @@ std::string formatReading(...) const;
 | `std::chrono` | 时间间隔（`main.cpp` sleep 已在用） |
 
 **不必现在系统学完**：整个 STL、所有分布类型、模板细节。
+
+---
+
+## English Summary
+
+（下面由助手根据你的 Day 04 笔记起草，请朗读 2–3 遍，理解后再用自己的话复述。）
+
+Today I built and ran the C++ version of the fake distance sensor.
+
+I learned that C++ splits code into a header file (`.hpp`) for declarations and a source file (`.cpp`) for implementations. `main.cpp` is the program entry point.
+
+Unlike Python, C++ must be compiled before running. I used `cmake ..`, `make`, and `./fake_sensor` in the `build/` directory.
+
+Inside `FakeSensor`, random distance uses a random engine (`std::mt19937`) and a distribution (`std::uniform_real_distribution`). I practiced the same idea in `random_demo.cpp`.
+
+I also learned about `const` member functions, object state (private member variables), and why we must run `make` again after changing C++ source code.
+
+---
+
+## Key Terms
+
+（请对照中文理解；熟练后可遮住中文列自测。）
+
+| English | 中文 |
+|---------|------|
+| header file | 头文件（`.hpp`，声明类和方法） |
+| source file | 源文件（`.cpp`，实现具体逻辑） |
+| declaration | 声明（说明有什么，不写具体实现） |
+| implementation | 实现（方法具体怎么写） |
+| compile | 编译（把源码变成机器码） |
+| link | 链接（把多个 `.o` 合成可执行文件） |
+| encapsulation | 封装（用 `private` 隐藏内部细节） |
+| member variable | 成员变量（对象的状态/data） |
+| const member function | 常量成员函数（承诺不修改对象状态） |
+| random engine | 随机引擎（如 `std::mt19937`） |
+
+---
 
 ## Git Commit
 

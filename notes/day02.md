@@ -170,6 +170,43 @@ rm -r a/
 
 **记住**：`rm` = 只删本地；`git rm` = 删本地 + 告诉 Git 下次 commit 时从仓库移除。
 
+---
+
+## English Summary
+
+（下面由助手根据你的 Day 02 笔记起草，请朗读 2–3 遍，理解后再用自己的话复述。）
+
+Today I practiced Linux and Git for my robotics learning project.
+
+I used terminal commands like `cd`, `ls`, `grep`, `echo`, `cp`, and `mv` to manage files in `practice/day02/`.
+
+I also reviewed the Git workflow: `git status`, `git add`, `git commit`, `git push`, and `git log --oneline`.
+
+The most important new idea was the three Git areas: working directory, staging area, and last commit. `git diff` shows unstaged changes; `git diff --staged` shows what is ready to commit.
+
+I had problems with new untracked files and with `git rm`, but I learned how to fix them with `git status`, `git restore`, and `git rm -rf`.
+
+---
+
+## Key Terms
+
+（请对照中文理解；熟练后可遮住中文列自测。）
+
+| English | 中文 |
+|---------|------|
+| terminal | 终端（输入命令的界面） |
+| working directory | 工作目录（当前所在文件夹） |
+| redirect | 重定向（`>` 覆盖写文件，`>>` 追加） |
+| grep | 在文件内容中搜索关键词 |
+| git status | 查看哪些文件被修改、暂存或未跟踪 |
+| staging area | 暂存区（`git add` 之后、commit 之前） |
+| git diff | 比较工作区与暂存区的差异 |
+| commit | 提交（把暂存区快照写入 Git 历史） |
+| repository | 代码仓库 |
+| HEAD | Git 指针，表示当前所在提交位置 |
+
+---
+
 ## What I Still Don't Understand
 
 -  No

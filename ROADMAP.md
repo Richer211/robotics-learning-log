@@ -51,9 +51,40 @@ VLA models, manipulation, RL, CUDA depth — after core demos ship.
 3. **Video**: max 30–45 min/day; always follow with code.
 4. **No marathon courses** — learn from the current task only.
 5. **Ship runnable demos** — recruiters care about reproducible projects, not certificates.
+6. **English sync**: Chinese for understanding, English for output — daily English Summary + Key Terms; Git commits in English; GitHub README in English.
+
+## English Learning Phases
+
+| When | Daily English task |
+|------|-------------------|
+| Week 1 | English Summary + Key Terms (+10 min) |
+| Week 2+ | Add 60-second Speaking Draft |
+| Week 3+ | Interview Q&A twice per week |
+| Month 2+ | Record speaking + review (see `notes/speaking/README.md`) |
+
+## English Goals
+
+### After 1 month
+
+- Write a simple daily English Summary
+- ~80 robotics + engineering terms in `notes/glossary/robotics-terms.md`
+- Introduce fake sensor demo and CMake build in English
+- Read common JD terms: ROS2, perception, deployment, sensor integration
+
+### After 3 months
+
+- Explain ROS2 node, topic, publisher, subscriber in English
+- Present Week 4 perception demo orally (under 2 minutes)
+- Week project READMEs readable by engineers
+
+### After 6 months
+
+- 10-minute English project presentation (perception + ROS2 + simulation)
+- Basic behavioral and technical interview Q&A
+- GitHub profile as an English portfolio
 
 ## Daily Check
 
-> Did I write code, run it, change it, and record what happened?
+> Did I write code, run it, change it, and record what happened (in Chinese and English)?
 
 If yes → valid day. If only videos / bookmarks → not progress.

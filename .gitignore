@@ -1,4 +1,4 @@
-# Build artifacts
+# Build artifacts（编译产物，可用源码重新 cmake/make 生成）
 build/
 **/build/
 cmake-build-*/
@@ -28,7 +28,14 @@ week04_ros2_vision/output/
 *.mp4
 !week03_vision_demo/sample/.gitkeep
 
-# Logs and temp
+# Logs and temp（运行时可重新生成）
 *.log
 sensor_log.txt
 /tmp/
+
+# Speaking recordings (keep review notes, not large audio)
+notes/speaking/*.mp3
+notes/speaking/*.m4a
+
+# Practice binaries（g++ 编译出的本地可执行文件，不提交）
+practice/**/random_demo

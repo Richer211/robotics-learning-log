@@ -22,6 +22,8 @@ See [ROADMAP.md](ROADMAP.md) for milestones and [notes/environment.md](notes/env
 
 **每天只看这个文件 → [notes/CURRENT.md](notes/CURRENT.md)**
 
+**英文同步学习**：每日 English Summary + Key Terms；词汇表 [notes/glossary/robotics-terms.md](notes/glossary/robotics-terms.md)；口语流程 [notes/speaking/README.md](notes/speaking/README.md)
+
 ## Progress
 
 ### Week 1 (in progress)

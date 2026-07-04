@@ -18,7 +18,8 @@ cat sensor_log.txt
 
 ## What I Finished
 
-- [ ] 
+- [x] 运行 `sensor_sim.py` 并理解 `FakeSensor` 各方法
+- [x] 将告警距离从 1.0m 改为 0.8m 并对比结果
 
 ## What I Learned
 
@@ -48,7 +49,42 @@ args.output.write_text 则负责把lines这个记录好的列表放到sensor_log
 
 ## How I Solved Them
 
-- 
+- 用 `random.seed(42)` 固定距离序列；增大 `--frames` 可更稳定地对比 WARNING 次数
+
+---
+
+## English Summary
+
+（下面由助手根据你的 Day 03 笔记起草，请朗读 2–3 遍，理解后再用自己的话复述。）
+
+Today I worked on the Python fake sensor simulation in `sensor_sim.py`.
+
+I learned how the `FakeSensor` class reads distance and temperature, checks warnings, and writes output to `sensor_log.txt`.
+
+I changed the warning threshold from 1.0 m to 0.8 m. A lower threshold is stricter, so WARNING appears less often.
+
+I also learned that random distance values make each run different. To compare fairly, I can use `random.seed(42)` or run more frames.
+
+The program uses command-line arguments like `--frames` and `--interval` to control how many readings to print and how long to wait between them.
+
+---
+
+## Key Terms
+
+（请对照中文理解；熟练后可遮住中文列自测。）
+
+| English | 中文 |
+|---------|------|
+| class | 类（把数据和方法封装在一起） |
+| constructor | 构造函数（Python 的 `__init__`） |
+| method | 方法（类里的函数） |
+| warning threshold | 告警阈值（距离小于该值时 WARNING） |
+| random seed | 随机种子（固定后可重复同一随机序列） |
+| command-line argument | 命令行参数（如 `--frames 10`） |
+| sensor simulation | 传感器模拟（无真实硬件，用代码生成读数） |
+| parse | 解析（程序读取并理解命令行参数） |
+
+---
 
 ## What I Still Don't Understand
 
