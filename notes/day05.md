@@ -97,6 +97,6 @@ After fixing `.gitignore`, `git status` no longer shows files like `build/`, `se
 
 ## Git Commit
 
-- Commit message：
+- Commit message：day05 learning
 - Pushed to GitHub：Yes 
 
