@@ -92,7 +92,20 @@
 
 ## Day 06 — Environment Setup
 
-（学完 Day 06 后在此追加）
+| English | 中文 | Note |
+|---------|------|------|
+| virtual machine | 虚拟机 | Runs Ubuntu inside macOS |
+| Ubuntu | Linux 发行版 | Main OS for ROS2 Humble |
+| container | 容器 | Lightweight isolated environment |
+| Docker | 容器工具 | Used for reproducible environments |
+| ROS2 | 机器人操作系统第二代 | Robot software framework |
+| development environment | 开发环境 | Tools and OS used for coding/running projects |
+| ARM64 | ARM 架构 | Apple Silicon / M1 architecture |
+| ISO image | 系统安装镜像 | Installer image for Ubuntu |
+| SSH | 远程登录协议 | Used to connect to the VM from macOS |
+| OpenSSH Server | SSH 服务端 | Allows remote login into the VM |
+| Ubuntu Desktop | Ubuntu 图形桌面环境 | Needed for GUI tools like RViz / Gazebo |
+| colcon build | ROS2 工作区构建命令 | Builds ROS2 packages in a workspace |
 
 ---
 
