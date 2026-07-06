@@ -1,6 +1,6 @@
 # Day 06 - Robotics Learning
 
-> 状态：**进行中** — Ubuntu VM 正在安装。
+> 状态：**已完成** — Ubuntu VM 正在安装。
 
 ## Today's Goal
 

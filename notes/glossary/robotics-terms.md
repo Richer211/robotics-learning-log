@@ -111,7 +111,16 @@
 
 ## Day 07 — Week 1 Review
 
-（学完 Day 07 后在此追加）
+| English | 中文 | Note |
+|---------|------|------|
+| weekly review | 周复盘 | Review what was completed during the week |
+| milestone | 阶段性成果 | A meaningful checkpoint in the learning plan |
+| SSH connection | SSH 连接 | Remote terminal access from macOS to Ubuntu VM |
+| ROS2 setup | ROS2 环境配置 | Preparing Ubuntu VM for ROS2 Humble |
+| next steps | 下一步计划 | Tasks to start in Week 2 |
+| publisher | 发布者节点 | Sends messages to a ROS2 topic |
+| subscriber | 订阅者节点 | Receives messages from a ROS2 topic |
+| topic | ROS2 话题 | Named communication channel between nodes |
 
 ---
 
