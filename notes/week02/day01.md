@@ -354,5 +354,5 @@ If I open a new terminal, I need to run `source install/setup.bash` again, other
 
 ## Git Commit
 
-- Commit message：
-- Pushed to GitHub：No
+- Commit message："update week02/day01.md"
+- Pushed to GitHub：Yes
