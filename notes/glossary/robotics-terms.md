@@ -124,6 +124,23 @@
 
 ---
 
+## Week 2 Day 01 — ROS2 Environment Check
+
+| English | 中文 | Note |
+|---------|------|------|
+| ROS2 workspace | ROS2 工作区 | Folder used to build and run ROS2 packages |
+| colcon | ROS2 构建工具 | Builds packages inside a ROS2 workspace |
+| source | 加载环境脚本 | Makes the current terminal know ROS2 or local packages |
+| setup file | 环境设置文件 | e.g. `setup.bash`, loaded with `source` |
+| environment setup | 环境配置 | Preparing Ubuntu VM and ROS2 tools |
+| package | ROS2 包 | A unit of ROS2 code, e.g. `fake_sensor_pkg` |
+| publisher | 发布者节点 | Sends fake distance messages to a topic |
+| subscriber | 订阅者节点 | Receives fake distance messages from a topic |
+| topic | 话题 / 数据频道 | Named channel such as `/sensor/distance` |
+| clone | 克隆仓库 | Download a GitHub repository into the VM |
+
+---
+
 ## JD Vocabulary（从招聘启事积累）
 
 | English | 中文 | Source |
