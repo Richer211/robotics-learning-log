@@ -138,12 +138,16 @@ create_subscription(...)
 
 参数对照：
 
-| 代码 | 含义 |
-|------|------|
-| `Range` | message 类型 |
-| `/sensor/distance` | topic 名字 |
-| `self.callback` | 收到消息后自动调用的函数 |
-| `10` | QoS queue depth，先理解为消息缓存队列大小 |
+
+| 代码                 | 含义                           |
+| ------------------ | ---------------------------- |
+| `Range`            | message 类型                   |
+| `/sensor/distance` | topic 名字                     |
+| `self.callback`    | 收到消息后自动调用的函数                 |
+| `10`               | QoS queue depth，先理解为消息缓存队列大小 |
+
+
+
 
 ### 关于 `WARNING_DISTANCE_M = 0.8`
 
@@ -185,6 +189,8 @@ subscriber: 距离 < 0.8m 才 WARNING
 
 ## 4. English Summary + Key Terms（10 分钟）
 
+
+
 ## English Summary
 
 Today I read the ROS2 publisher and subscriber code in more detail.
@@ -197,15 +203,19 @@ After changing the subscriber warning threshold from `1.0` to `0.8`, I rebuilt a
 
 The subscriber still receives all messages, but it only prints `WARNING` when the distance is less than `0.8` meters.
 
-| English | 中文 |
-|---------|------|
-| rclpy | ROS2 Python 客户端库 |
-| callback | 回调函数 |
-| timer | 定时器 |
-| Range message | 距离范围消息 |
-| spin | 让节点持续处理事件 |
-| warning threshold | 警告阈值 |
-| QoS queue depth | QoS 队列深度 |
+
+| English           | 中文               |
+| ----------------- | ---------------- |
+| rclpy             | ROS2 Python 客户端库 |
+| callback          | 回调函数             |
+| timer             | 定时器              |
+| Range message     | 距离范围消息           |
+| spin              | 让节点持续处理事件        |
+| warning threshold | 警告阈值             |
+| QoS queue depth   | QoS 队列深度         |
+
+
+
 
 ## 60-second Speaking Draft
 
@@ -226,7 +236,10 @@ I also tested a new warning threshold in the subscriber and confirmed that only 
 - [x] 能说出 `callback` 什么时候触发
 - [x] 本日志已填写
 
+
+
 ## Git Commit
 
-- Commit message：
-- Pushed to GitHub：No
+- Commit message：learn day03 content and practice
+- Pushed to GitHub：Yes
+
