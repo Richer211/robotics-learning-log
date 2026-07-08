@@ -1,6 +1,6 @@
 # Week 2 Day 03 - Read ROS2 Publisher / Subscriber Code
 
-> 状态：**进行中** — 已阅读 publisher / subscriber 代码，已修正核心概念；`WARNING_DISTANCE_M = 0.8` 还需要同步到 VM 后重新 build/run 验证。
+> 状态：**已完成** — 已阅读 publisher / subscriber 代码，已验证 subscriber 的 `WARNING_DISTANCE_M = 0.8` 行为。
 
 ## Today's Goal
 
@@ -147,23 +147,55 @@ create_subscription(...)
 
 ### 关于 `WARNING_DISTANCE_M = 0.8`
 
-我已经在本地代码里把 subscriber 的 warning 阈值从 `1.0` 改成了 `0.8`。
+我把 subscriber 的 warning 阈值从 `1.0` 改成了 `0.8`，并在 VM 里重新 build / run 进行了验证。
 
-但因为 VM 里运行的是另一份从 GitHub clone 下来的仓库，所以这个改动还没有自动进入 VM。
-
-后续需要：
+验证流程是：
 
 ```text
-macOS 本地 commit / push
+macOS 本地修改代码
+→ push 到 GitHub
 → VM 里 git pull
 → VM 里 colcon build --symlink-install
 → source install/setup.bash
-→ 重新运行测试
+→ 重新运行 publisher / subscriber
 ```
 
-这样才能确认 subscriber 在距离小于 `0.8m` 时才打印 `WARNING`。
+观察结果：
+
+- subscriber 仍然会接收 `/sensor/distance` 上的所有 `Range` message。
+- 只有当 `msg.range < 0.8` 时，subscriber 才会打印 `WARNING`。
+- 当距离是 `0.84m`、`0.96m` 这类大于 `0.8m` 的值时，subscriber 只打印普通 `INFO`。
+
+所以更准确的理解是：
+
+```text
+WARNING_DISTANCE_M = 0.8
+不是让 subscriber 只接收小于 0.8 的消息，
+而是让 subscriber 只在距离小于 0.8m 时打印 WARNING。
+```
+
+另外，publisher 里如果仍然是 `WARNING_DISTANCE_M = 1.0`，那么 publisher 和 subscriber 的 warning 标准会不同：
+
+```text
+publisher:  距离 < 1.0m 就 WARNING
+subscriber: 距离 < 0.8m 才 WARNING
+```
+
+这就是为什么 publisher 可能对 `0.84m` 打印 warning，但 subscriber 不打印 warning。这个现象是合理的，因为两个节点用了不同的阈值。
 
 ## 4. English Summary + Key Terms（10 分钟）
+
+## English Summary
+
+Today I read the ROS2 publisher and subscriber code in more detail.
+
+I learned that `create_publisher()` creates a publisher for a specific message type and topic.
+
+I also learned that `create_subscription()` registers a callback function, and ROS2 calls that callback whenever a new message arrives.
+
+After changing the subscriber warning threshold from `1.0` to `0.8`, I rebuilt and reran the demo in the VM.
+
+The subscriber still receives all messages, but it only prints `WARNING` when the distance is less than `0.8` meters.
 
 | English | 中文 |
 |---------|------|
@@ -172,6 +204,8 @@ macOS 本地 commit / push
 | timer | 定时器 |
 | Range message | 距离范围消息 |
 | spin | 让节点持续处理事件 |
+| warning threshold | 警告阈值 |
+| QoS queue depth | QoS 队列深度 |
 
 ## 60-second Speaking Draft
 
@@ -182,6 +216,8 @@ The publisher creates a `Range` message and publishes it every 0.5 seconds.
 The subscriber receives the message in a callback function.
 
 I learned that `rclpy.spin()` keeps a ROS2 node alive so it can process timers and messages.
+
+I also tested a new warning threshold in the subscriber and confirmed that only distances below 0.8 meters produce a warning.
 
 ## 完成标准
 
