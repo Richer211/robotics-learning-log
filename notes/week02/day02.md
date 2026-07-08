@@ -155,7 +155,7 @@ publisher 会生成一个假的距离值，发布到 `/sensor/distance`，同时
 msg.range < self.WARNING_DISTANCE_M
 ```
 
-就说明距离太近，会打印 `close obstacle` warning。
+就说明距离太近，会打印 `close obstacle at` + 距离值的 warning。否则就是正常距离值，其实打印的都是距离值，只不过距离小于warning_distance会有警告。
 
 这里不是“距离起点多远”，而是“传感器这一次测到的物体/障碍物距离是多少”。
 
