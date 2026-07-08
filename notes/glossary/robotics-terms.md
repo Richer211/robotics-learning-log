@@ -141,6 +141,22 @@
 
 ---
 
+## Week 2 Day 02 — ROS2 Node / Topic Basics
+
+| English | 中文 | Note |
+|---------|------|------|
+| node | 节点 | A running ROS2 program or module |
+| topic | 话题 / 数据频道 | Communication channel between nodes |
+| publisher | 发布者节点 | Sends messages to a topic |
+| subscriber | 订阅者节点 | Receives messages from a topic |
+| message | 消息 | Structured data sent through a topic |
+| Range message | 距离范围消息 | `sensor_msgs/Range` used for distance readings |
+| frame_id | 坐标系/传感器框架 ID | Identifies the sensor frame, e.g. `fake_lidar_link` |
+| topic echo | 输出 topic 消息内容 | `ros2 topic echo /sensor/distance` prints live messages |
+| node list | 节点列表 | `ros2 node list` shows running ROS2 nodes |
+
+---
+
 ## JD Vocabulary（从招聘启事积累）
 
 | English | 中文 | Source |
