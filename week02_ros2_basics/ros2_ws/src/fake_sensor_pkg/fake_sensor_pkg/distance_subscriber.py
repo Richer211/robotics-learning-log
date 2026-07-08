@@ -6,7 +6,7 @@ from sensor_msgs.msg import Range
 class DistanceSubscriber(Node):
   """Subscribes to /sensor/distance and logs warnings."""
 
-  WARNING_DISTANCE_M = 1.0
+  WARNING_DISTANCE_M = 0.8
 
   def __init__(self):
     super().__init__('distance_subscriber')
