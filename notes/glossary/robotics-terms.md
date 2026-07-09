@@ -157,6 +157,21 @@
 
 ---
 
+## Week 2 Day 04 — ROS2 Launch File
+
+| English | 中文 | Note |
+|---------|------|------|
+| launch file | 启动文件 | Starts one or more ROS2 nodes with one command |
+| launch system | 启动系统 | ROS2 system for starting and managing nodes |
+| executable | 可执行入口 | Program entry point started by `ros2 run` or `ros2 launch` |
+| package | ROS2 包 | A ROS2 code unit such as `fake_sensor_pkg` |
+| node name | 节点名称 | Runtime name shown by `ros2 node list` |
+| process | 进程 | A running program in the operating system |
+| output | 输出 | Logs or messages printed by a node |
+| screen output | 屏幕输出 | Logs printed directly to the terminal |
+
+---
+
 ## JD Vocabulary（从招聘启事积累）
 
 | English | 中文 | Source |
