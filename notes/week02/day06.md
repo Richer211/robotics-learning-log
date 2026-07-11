@@ -19,9 +19,11 @@
 回答：
 
 - publisher 和 subscriber 里都有 warning threshold，会不会不一致？
+不会，因为publisher会把发布的message发到topic message上，也就是这里的/sensor/distance而subscriber则会从topic message上接收他们发布的message，这里就包含了warning threshold。所以他们不会不一致。
 - 如果只改 subscriber，系统行为会怎么变化？
+比如只改subscriber里的`WARNING_DISTANCE_M`将1.0改成0.8，那么接收信息会和发布信息不一致，主要原因是条件限制，比如会在小于0.8时发出warnging threshold。
 - 如果改 publisher 的 timer 从 `0.5` 到 `0.2`，输出频率会怎么变化？
-
+输出频率会从0.5s发送一次变成0.2s发送一次，频率变快。
 ## 2. 练（40 分钟）
 
 任选一个小改动：
