@@ -172,6 +172,22 @@
 
 ---
 
+## Week 2 Day 05 — ROS2 Bag Record / Playback
+
+| English | 中文 | Note |
+|---------|------|------|
+| rosbag | ROS 数据包工具 | Records and replays ROS2 topic messages |
+| record | 录制 | Save live topic messages into a bag file |
+| playback | 回放 | Play recorded topic messages again |
+| replay | 重新播放 | Publish saved messages again in time order |
+| bag file | 数据包文件 | Stored rosbag data, e.g. `.db3` file |
+| metadata | 元信息 | Bag information such as topics, types, and duration |
+| telemetry | 遥测/运行数据 | Runtime data from sensors or systems |
+| data logging | 数据记录 | Saving data for later analysis and debugging |
+| offline debugging | 离线调试 | Debugging with recorded data instead of a live robot |
+
+---
+
 ## JD Vocabulary（从招聘启事积累）
 
 | English | 中文 | Source |
