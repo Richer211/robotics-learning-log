@@ -13,7 +13,7 @@ class DistancePublisher(Node):
   def __init__(self):
     super().__init__('distance_publisher')
     self.publisher_ = self.create_publisher(Range, '/sensor/distance', 10)
-    self.timer = self.create_timer(0.2, self.publish_reading)
+    self.timer = self.create_timer(0.5, self.publish_reading)
     self.frame = 0
     self.get_logger().info('Distance publisher started on /sensor/distance')
 
