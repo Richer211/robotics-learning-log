@@ -188,6 +188,22 @@
 
 ---
 
+## Week 2 Day 06 — Modify ROS2 Demo Requirement
+
+| English | 中文 | Note |
+|---------|------|------|
+| warning threshold | 警告阈值 | Condition for printing a warning |
+| publish rate | 发布频率 | How often a publisher sends messages |
+| rebuild | 重新构建 | Run `colcon build` after code changes |
+| iteration | 迭代 | Edit, build, run, verify, and improve |
+| debug | 调试 | Find and fix behavior or code problems |
+| runtime behavior | 运行时行为 | What the node does while running |
+| restore default | 恢复默认值 | Change experimental values back to defaults |
+| parameter change | 参数修改 | Small change such as timer or threshold |
+| consistency | 一致性 | Keeping code behavior aligned with README/docs |
+
+---
+
 ## JD Vocabulary（从招聘启事积累）
 
 | English | 中文 | Source |
