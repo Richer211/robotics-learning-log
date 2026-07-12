@@ -136,5 +136,5 @@ git push
 
 - [x] `weekly-review-w02.md` 已填写
 - [x] glossary 已更新 Week 2 词汇
-- [ ] Git 已 commit / push
+- [x] Git 已 commit / push
 - [x] 明确 Week 3 下一步
