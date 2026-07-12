@@ -204,6 +204,22 @@
 
 ---
 
+## Week 2 Day 07 — Week 2 Review
+
+| English | 中文 | Note |
+|---------|------|------|
+| ROS2 node | ROS2 节点 | A running ROS2 program or functional module |
+| topic graph | 话题图 | Shows how nodes are connected through topics |
+| launch system | 启动系统 | Starts and manages multiple ROS2 nodes |
+| rosbag playback | rosbag 回放 | Replays recorded topic messages |
+| robotics middleware | 机器人中间件 | Software layer for robot communication and tools |
+| perception | 感知 | Understanding the environment from sensor data |
+| vision pipeline | 视觉流程 | Steps for processing camera/image data |
+| review | 复盘 | Summarizing learning results and gaps |
+| next milestone | 下一个阶段目标 | The next meaningful checkpoint in the learning plan |
+
+---
+
 ## JD Vocabulary（从招聘启事积累）
 
 | English | 中文 | Source |
