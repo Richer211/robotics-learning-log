@@ -4,83 +4,85 @@
 
 ## 你现在的位置
 
-- **阶段**：Month 1 / Week 1
-- **已完成**：Day 01～06（假传感器、Linux/Git、Python/C++ class、工程规范、Ubuntu VM）
-- **今天**：Day 07 — Week 1 周复盘 + Ubuntu VM 收尾
-- **本周目标**：复盘 Week 1，确认 Week 2 能在 Ubuntu VM 里开始 ROS2
+- **阶段**：Month 1 / Week 3
+- **已完成**：Week 1 基础工程 + Week 2 ROS2 Basics
+- **今天**：Week 3 Day 01 — Vision 环境 + 第一次 YOLO detection run
+- **本周目标**：跑通 OpenCV + YOLO 视频检测，理解 frame、inference、FPS / latency，为 Week 4 ROS2 vision integration 做准备
 
-## 今天做这 5 件事（Day 07）
+## 今天做这 5 件事（Week 3 Day 01）
 
-### 1. 学（20 分钟）
+### 1. 学（30 分钟）
 
-回顾 Week 1 全部日志：
+阅读：
 
-- [`notes/day01.md`](day01.md)：Python / C++ 假传感器初版
-- [`notes/day02.md`](day02.md)：Linux + Git
-- [`notes/day03.md`](day03.md)：Python class
-- [`notes/day04.md`](day04.md)：C++ class + CMake
-- [`notes/day05.md`](day05.md)：`.gitignore` + README workflow
-- [`notes/day06.md`](day06.md)：Docker + Ubuntu VM
+- [`notes/week03/week3-schedule.md`](week03/week3-schedule.md)
+- [`notes/week03/day01.md`](week03/day01.md)
+- [`week03_vision_demo/README.md`](../week03_vision_demo/README.md)
+- `week03_vision_demo/detect_video.py` 的参数部分
 
-对照回答（写进 [`notes/weekly-review-w01.md`](weekly-review-w01.md)）：
+重点回答：
 
-- Week 1 你真正完成了哪些可运行产出？
-- 你现在最熟的 3 个技能是什么？
-- 你还不熟、Week 2 需要继续练的 3 个点是什么？
-- Ubuntu VM 现在是否足够支撑 Week 2 学 ROS2？
+- Week 3 vision demo 做什么？
+- 为什么这周可以先在 macOS 上跑，而不是必须在 Ubuntu VM 里跑？
+- `requirements.txt` 是干什么的？
+- `yolov8n.pt` 是什么？
 
 ### 2. 练（30 分钟）
 
-在 Ubuntu VM 里做最后确认：
+在 macOS 里创建 Python virtual environment：
 
 ```bash
-lsb_release -a
-hostname -I
-systemctl status ssh
+cd "/Users/ganggang/Documents/Robotics Learning/week03_vision_demo"
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
-如果还没退出 `systemctl status`，按 `q` 回到命令行。
+准备一个短视频，放到：
 
-可选：从 macOS 终端测试 SSH（把 IP 换成你的 VM IP，例如 `192.168.64.6`）：
+```text
+week03_vision_demo/sample/sample.mp4
+```
+
+运行：
 
 ```bash
-ssh richard@192.168.64.6
+python detect_video.py --source sample/sample.mp4 --max-frames 100
 ```
 
-如果 SSH 成功，输入 `exit` 退出。若不成功，先记录问题，不阻塞 Day 07。
+也可以用 webcam：
 
-### 3. 记中文复盘（20 分钟）
+```bash
+python detect_video.py --source 0 --max-frames 100
+```
 
-填写：
+### 3. 记中文笔记（10 分钟）
 
-- [`notes/day07.md`](day07.md)
-- [`notes/weekly-review-w01.md`](weekly-review-w01.md)
+填写 [`notes/week03/day01.md`](week03/day01.md)：
 
-重点写：
-
-- Week 1 完成了什么
-- 哪些问题解决了
-- 哪些内容仍不理解
-- Week 2 的 Top 3 任务
-- Ubuntu VM / Docker / Git / C++ 的当前状态
+- 环境是否安装成功？
+- 第一次运行是否下载 YOLO weights？
+- 输出视频生成在哪里？
+- 终端有没有打印 FPS / inference time？
+- 有无报错？如何解决？
 
 ### 4. 写英文输出（10 分钟）
 
-在 [`notes/day07.md`](day07.md) 或 [`notes/weekly-review-w01.md`](weekly-review-w01.md) 填写：
+在 [`notes/week03/day01.md`](week03/day01.md) 填写：
 
-1. **English Summary**（3–5 句，简单英文）
-2. **Key Terms**（3–8 个，建议：`weekly review`, `milestone`, `Ubuntu VM`, `ROS2 setup`, `next steps`）
-3. 新词抄到 [`notes/glossary/robotics-terms.md`](glossary/robotics-terms.md) 的 Day 07 区
+1. **English Summary**（3–5 句）
+2. **Key Terms**（5–10 个）
+3. **60-second Speaking Draft**
 
-**Week 1 今天仍不必做：** 60-second Speaking、Interview Q&A
+新词同步到 [`notes/glossary/robotics-terms.md`](glossary/robotics-terms.md)。
 
 ### 5. 提交（5 分钟）
 
 ```bash
 cd "/Users/ganggang/Documents/Robotics Learning"
-git add notes/day07.md notes/weekly-review-w01.md notes/CURRENT.md notes/glossary/robotics-terms.md
-# 若 day06.md 还有 Ubuntu VM 最终状态更新，也一并 add
-git commit -m "Day 07: review Week 1 and prepare ROS2 environment"
+git status
+git add notes/week03 notes/CURRENT.md notes/glossary/robotics-terms.md
+git commit -m "Add Week 3 vision learning plan"
 git push
 ```
 
@@ -88,11 +90,11 @@ git push
 
 ## 今天完成标准
 
-- [ ] `notes/day07.md` 已填写
-- [ ] `notes/weekly-review-w01.md` 已填写
-- [ ] 能说出 Week 1 的主要产出和不足
-- [ ] Ubuntu VM 状态已记录（版本、IP、SSH、桌面环境）
-- [ ] Day 07 English Summary + Key Terms 已填写
+- [ ] `.venv` 创建成功
+- [ ] `pip install -r requirements.txt` 成功
+- [ ] `detect_video.py` 至少跑通一次
+- [ ] `notes/week03/day01.md` 已填写
+- [ ] Day 01 English Summary + Key Terms 已填写
 - [ ] 今天有英文 Git commit
 
 ## 英文学习分阶段（不用一次做完）
@@ -101,21 +103,21 @@ git push
 |------|----------------|
 | **Week 1（Day 02–07）** | English Summary + Key Terms（+10 min） |
 | **Week 2 起** | 加上 60-second Speaking Draft（可先读稿） |
-| **Week 3 起** | 每周 2 次 Interview Q&A（周五或完成一周项目时） |
+| **Week 3 起** | 每周 2 次 Interview Q&A（围绕 vision / perception） |
 | **Month 2 起** | 录音 + 复盘，见 [`notes/speaking/README.md`](speaking/README.md) |
 
 原则：**中文理解技术，英文沉淀表达；技术是主线，英文每天 +10 分钟。**
 
-## 明天（Week 2 预告）
+## 明天（Week 3 Day 02 预告）
 
-- 在 Ubuntu VM 里安装 / 验证 ROS2 Humble
-- 进入 `week02_ros2_basics/ros2_ws`
-- 学 ROS2 基础：node、topic、publisher、subscriber
-- 开始填写 Week 2 学习日志
+- 理解 OpenCV 如何读取视频
+- 学 `cv2.VideoCapture`、`cap.read()`、`VideoWriter`
+- 把 video 理解成一帧一帧的 image stream
+- 填写 [`notes/week03/day02.md`](week03/day02.md)
 
 ## 本周完整日程
 
-见 [`notes/week1-schedule.md`](week1-schedule.md)（含每日建议 Key Terms）
+见 [`notes/week03/week3-schedule.md`](week03/week3-schedule.md)（含每日建议 Key Terms）
 
 ## 每天固定节奏
 

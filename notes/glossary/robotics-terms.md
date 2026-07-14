@@ -220,6 +220,40 @@
 
 ---
 
+## Week 3 Preview — Vision Demo
+
+| English | 中文 | Note |
+|---------|------|------|
+| computer vision | 计算机视觉 | Understanding images and videos with software |
+| perception | 感知 | Interpreting sensor data to understand the environment |
+| OpenCV | 计算机视觉库 | Used for image and video processing |
+| YOLO | 实时目标检测模型 | Detects objects in images or video frames |
+| frame | 图像帧 | One image from a video stream |
+| inference | 推理 | Running a model to get predictions |
+| confidence threshold | 置信度阈值 | Minimum confidence required to keep a detection |
+| bounding box | 检测框 | Rectangle around a detected object |
+| FPS | 每秒帧数 | Frames processed per second |
+| latency | 延迟 | Time needed to process one frame |
+
+---
+
+## Week 3 Day 01 — Vision Environment and First Detection Run
+
+| English | 中文 | Note |
+|---------|------|------|
+| virtual environment | Python 虚拟环境 | Isolates project dependencies, e.g. `.venv` |
+| dependency | 依赖 | Required packages listed in `requirements.txt` |
+| model weights | 模型权重 | Pretrained file such as `yolov8n.pt` |
+| OpenCV | 计算机视觉库 | Reads video frames and writes annotated video |
+| YOLO | 实时目标检测模型 | Runs object detection on each frame |
+| inference | 推理 | Model prediction on one frame |
+| FPS | 每秒帧数 | Frames processed per second |
+| annotated video | 标注后视频 | Output video with detection boxes |
+| confidence threshold | 置信度阈值 | Controlled by `--conf` |
+| max frames | 最大帧数 | Controlled by `--max-frames` for quick tests |
+
+---
+
 ## JD Vocabulary（从招聘启事积累）
 
 | English | 中文 | Source |

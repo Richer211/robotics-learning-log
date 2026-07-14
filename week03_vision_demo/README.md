@@ -8,9 +8,9 @@ Runs on **macOS or Ubuntu** (GPU optional).
 
 ```bash
 cd week03_vision_demo
-python3 -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+python3 -m venv .venv # 创建项目专属 Python 环境
+source .venv/bin/activate   # 启用这个环境
+pip install -r requirements.txt # 安装项目依赖
 ```
 
 First run downloads YOLO weights (e.g. `yolov8n.pt`).
