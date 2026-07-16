@@ -254,6 +254,33 @@
 
 ---
 
+## Week 3 Day 02 — OpenCV Video Reading
+
+| English | 中文 | Note |
+|---------|------|------|
+| video capture | 视频读取 | `cv2.VideoCapture` decodes a video file or camera |
+| decode | 解码 | Converting stored video into individual frames |
+| frame rate | 帧率 | Number of frames per second, e.g. 30 FPS |
+| video writer | 视频写入器 | `cv2.VideoWriter` writes frames into an output video |
+| codec | 编解码器 | Format used to encode/decode video, e.g. `mp4v` |
+| resolution | 分辨率 | Frame width and height in pixels |
+
+---
+
+## Week 3 Day 03 — YOLO Inference and Detection Results
+
+| English | 中文 | Note |
+|---------|------|------|
+| inference | 推理 | Model prediction on one frame |
+| confidence | 置信度 | Model's certainty score for a detection |
+| bounding box | 检测框 | Rectangle marking an object's location |
+| class label | 类别标签 | The predicted object category, e.g. `person` |
+| false positive | 误检 | Detecting something that isn't really there |
+| false negative | 漏检 | Missing something that is really there |
+| Results object | 检测结果对象 | Ultralytics output holding boxes, image, etc. |
+
+---
+
 ## JD Vocabulary（从招聘启事积累）
 
 | English | 中文 | Source |
