@@ -60,10 +60,10 @@ def main():
       break
 
     start = time.perf_counter()
-    results = model.predict(frame, conf=args.conf, verbose=False)
+    results = model.predict(frame, conf=args.conf, verbose=False) # results是一个列表，包含一个Detection对象
     infer_ms = (time.perf_counter() - start) * 1000.0
     total_infer_ms += infer_ms
-
+    num_boxes = len(results[0].boxes)
     annotated = results[0].plot()
     writer.write(annotated)
 
